@@ -46,3 +46,15 @@ Store.prototype.inventoryValue = function() {
 //   let sum = inventoryValue();
 //   return " " + this.balance + " " + sum;
 // };
+
+// removeAndClone: function (arr, valueToRemove) {
+//     return arr.filter(function(number){
+//       return number !== valueToRemove
+//     })
+// },
+
+Store.prototype.displayByGenre = function (somethingPassedIn) {
+    return this.inventory.filter(function(record){
+      return record.genre === somethingPassedIn
+    })
+};
