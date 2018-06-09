@@ -24,6 +24,26 @@ describe("Record Store", function(){
     assert.strictEqual(record1.printInfo(), "Bonobo, Black Sands, Electro, 10");
   })
 
+  // xit("should print all of the properties of the inventory", function(){
+  //   assert.strictEqual(store.showInventory(), "Bonobo, Black Sands, Electro, 10 " )
+  // })
+
+  it("should sell a record and increase the balance  by the price of the record", function(){
+    store.sell(record4);
+
+    assert.strictEqual(store.balance, 1015);
+  })
+
+  it("should calculate the total of the stock", function(){
+    assert.strictEqual(store.inventoryValue(), "Total cost of Stock = 41 Balance = 1000");
+  })
+
+  // it("should display the balance and value of the inventory"), function(){
+  //   // store.calculateFinanace();
+  //   assert.strictEqual(store.calculateFinanace(inventoryValue()), "1000 41");
+  //   // assert.strictEqual(store.inventoryValue, 41);
+  // }
+
 
 
 }) // end of describe;
