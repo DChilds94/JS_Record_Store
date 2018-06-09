@@ -20,4 +20,10 @@ describe("Record Store", function(){
     assert.strictEqual(store.inventory.length, 4);
   })
 
+  it("should print out all the properties of the record as a string", function(){
+    assert.strictEqual(record1.printInfo(), "Bonobo, Black Sands, Electro, 10");
+  })
+
+
+
 }) // end of describe;
