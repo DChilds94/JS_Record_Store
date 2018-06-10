@@ -93,20 +93,36 @@ describe("Record Store", function(){
   xit('customer2 has 2 items of the same value - should get two back', function(){
     customer2.collection.push(record6);
     customer2.collection.push(record4);
-    assert.strictEqual(customer2.highestValue(), [record4, record6]);
+    // console.log(customer2.highestValue());
+    assert.deepStrictEqual(customer2.highestValue(), [record4, record6]);
   })
 
   it('should sort records by price', function(){
     customer1.collection.push(record1);
     customer1.collection.push(record6);
     customer1.collection.push(record5);
-    // console.log(customer1.sortByValue());
-    // assert.strictEqual(customer1.sortByValue(), [record6, record5, record1]); <- this fails
-    // assert.strictEqual(customer1.sortByValue(), record6, record5, record1); <- this failss
-    assert.strictEqual(customer1.sortByValue(), customer1.collection);
-
-
+    assert.deepStrictEqual(customer1.sortByValue(), [record6, record5, record1]);
   })
+
+  it('should compare values of collections and display that customer1 has the highest value', function(){
+    customer1.collection.push(record1);
+    customer1.collection.push(record6);
+    customer1.collection.push(record5);
+    customer2.collection.push(record6);
+    customer2.collection.push(record4);
+    assert.strictEqual(customer1.compare(customer2), "Customer1 has the highest value: 36")
+  })
+  it('should compare values of collections and display that customer2 has the highest value', function(){
+    customer1.collection.push(record1);
+    customer1.collection.push(record6);
+    customer1.collection.push(record5);
+    customer2.collection.push(record6);
+    customer2.collection.push(record4);
+    customer2.collection.push(record2);
+    customer2.collection.push(record3);
+    assert.strictEqual(customer1.compare(customer2), "The other customer has the highest value: 50")
+  })
+
 
 
 

@@ -42,6 +42,15 @@ Customer.prototype.sortByValue = function () {
 
 };
 
+Customer.prototype.compare = function (customer) {
+    let myValue = this.valueOfCollection();
+    if (myValue >= customer.valueOfCollection()) {
+    return "Customer1 has the highest value: " + myValue;
+  } else {
+    return "The other customer has the highest value: " + customer.valueOfCollection();
+  }
+
+};
 
 
 
