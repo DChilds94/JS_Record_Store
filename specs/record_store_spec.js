@@ -74,6 +74,14 @@ describe("Record Store", function(){
     assert.strictEqual(customer2.cash, 0);
   })
 
+  it('should display customer1s total value of the collection', function(){
+    customer1.collection.push(record1);
+    customer1.collection.push(record2);
+    customer1.collection.push(record3);
+    customer1.collection.push(record4);
+    assert.strictEqual(customer1.valueOfCollection(), 45);
+  })
+
 
 
 }) // end of describe;

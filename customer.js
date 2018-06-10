@@ -13,4 +13,21 @@ Customer.prototype.buy = function (record) {
 }
 };
 
+
+// Customer.prototype.valueOfCollection = function () {
+//     let sum = 0;
+//     this.collection.forEach(function(record){
+//       sum += record.price;
+//     })
+//     return sum;
+// };
+Customer.prototype.valueOfCollection = function () {
+  return this.collection.reduce(function(sum, record){
+    return sum + record.price;
+  }, 0);
+};
+
+
+
+
 module.exports = Customer;
