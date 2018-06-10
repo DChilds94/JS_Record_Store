@@ -82,6 +82,20 @@ describe("Record Store", function(){
     assert.strictEqual(customer1.valueOfCollection(), 45);
   })
 
+  it('should get customer1s highest value record aka record4', function(){
+    customer1.collection.push(record1);
+    customer1.collection.push(record2);
+    customer1.collection.push(record3);
+    customer1.collection.push(record4);
+    assert.strictEqual(customer1.highestValue(), record4);
+  })
+
+  xit('customer2 has 2 items of the same value - should get two back', function(){
+    customer2.collection.push(record6);
+    customer2.collection.push(record4);
+    assert.strictEqual(customer2.highestValue(), [record4, record6]);
+  })
+
 
 
 }) // end of describe;

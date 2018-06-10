@@ -27,6 +27,14 @@ Customer.prototype.valueOfCollection = function () {
   }, 0);
 };
 
+Customer.prototype.highestValue = function () {
+  this.collection.sort(function(record1, record2){
+    return record2.price - record1.price;
+  })
+  return this.collection[0];
+
+};
+
 
 
 

@@ -42,6 +42,7 @@ Store.prototype.inventoryValue = function() {
   return "Total cost of Stock = " + sum + " Balance = " + this.balance;
 };
 
+
 // Store.prototype.calculateFinanace = function () {
 //   let sum = inventoryValue();
 //   return " " + this.balance + " " + sum;
