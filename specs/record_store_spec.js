@@ -62,6 +62,18 @@ describe("Record Store", function(){
     assert.strictEqual(customer1.cash, 90);
   })
 
+  it('customer2 should not be able to buy record4, funds too low', function(){
+    customer2.buy(record4);
+    assert.strictEqual(customer2.collection.length, 0);
+    assert.strictEqual(customer2.buy(record4), "insufficient funds")
+  })
+
+  it('customer2 should be able to buy record2, funds ==== to price', function (){
+    customer2.buy(record2);
+    assert.strictEqual(customer2.collection.length, 1);
+    assert.strictEqual(customer2.cash, 0);
+  })
+
 
 
 }) // end of describe;

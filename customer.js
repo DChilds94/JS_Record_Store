@@ -5,8 +5,12 @@ const Customer = function(cash){
 
 
 Customer.prototype.buy = function (record) {
+  if ( this.cash >= record.price) {
   this.collection.push(record);
   this.cash -= record.price;
+} else {
+  return "insufficient funds"
+}
 };
 
 module.exports = Customer;
