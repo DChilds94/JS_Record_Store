@@ -32,6 +32,13 @@ Customer.prototype.highestValue = function () {
     return record2.price - record1.price;
   })
   return this.collection[0];
+};
+
+Customer.prototype.sortByValue = function () {
+  this.collection.sort(function(record1, record2){
+    return record2.price - record1.price;
+  })
+  return this.collection;
 
 };
 

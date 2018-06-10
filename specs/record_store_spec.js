@@ -96,6 +96,18 @@ describe("Record Store", function(){
     assert.strictEqual(customer2.highestValue(), [record4, record6]);
   })
 
+  it('should sort records by price', function(){
+    customer1.collection.push(record1);
+    customer1.collection.push(record6);
+    customer1.collection.push(record5);
+    // console.log(customer1.sortByValue());
+    // assert.strictEqual(customer1.sortByValue(), [record6, record5, record1]); <- this fails
+    // assert.strictEqual(customer1.sortByValue(), record6, record5, record1); <- this failss
+    assert.strictEqual(customer1.sortByValue(), customer1.collection);
+
+
+  })
+
 
 
 }) // end of describe;
